@@ -1,6 +1,7 @@
 🔢 간단한 계산기 프로그램 (CalculatorLv1)
 이 프로젝트는 자바(Java)로 구현된 기본적인 콘솔 계산기 프로그램입니다. 사용자가 두 개의 양의 정수(0 포함)와 연산 기호를 입력하면 해당 연산을 수행하고 결과를 출력합니다. 클래스를 분리하지 않고 main 메서드 내에서 모든 로직을 처리하는 형태로, 자바의 기본적인 입출력, 조건문, 반복문, 예외 처리 등을 학습하는 데 적합합니다.
-
+https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" alt="Java Badge"/>
+https://img.shields.io/badge/Calculator-0078D4?style=for-the-badge&logo=calculator&logoColor=white" alt="Calculator Badge"/>
 🌟 주요 기능
 두 양의 정수 입력: 사용자로부터 두 개의 0을 포함한 양의 정수를 입력받습니다.
 
