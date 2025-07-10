@@ -1,7 +1,6 @@
 🔢 간단한 계산기 프로그램 (CalculatorLv1)
 이 프로젝트는 자바(Java)로 구현된 기본적인 콘솔 계산기 프로그램입니다. 사용자가 두 개의 양의 정수(0 포함)와 연산 기호를 입력하면 해당 연산을 수행하고 결과를 출력합니다. 클래스를 분리하지 않고 main 메서드 내에서 모든 로직을 처리하는 형태로, 자바의 기본적인 입출력, 조건문, 반복문, 예외 처리 등을 학습하는 데 적합합니다.
-https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" alt="Java Badge"/>
-https://img.shields.io/badge/Calculator-0078D4?style=for-the-badge&logo=calculator&logoColor=white" alt="Calculator Badge"/>
+
 🌟 주요 기능
 두 양의 정수 입력: 사용자로부터 두 개의 0을 포함한 양의 정수를 입력받습니다.
 
@@ -33,33 +32,6 @@ https://img.shields.io/badge/Calculator-0078D4?style=for-the-badge&logo=calculat
 
 연속 계산: 한 번의 계산 후에도 계산기를 계속 사용할지 종료할지 사용자에게 선택권을 제공합니다.
 
-🚀 실행 방법
-자바 개발 환경(JDK) 설치:
-
-자바 개발 키트(JDK) 8 이상이 시스템에 설치되어 있어야 합니다.
-
-설치 여부는 터미널 또는 명령 프롬프트에서 java -version 명령어로 확인할 수 있습니다.
-
-소스 코드 다운로드:
-
-App.java 파일을 다운로드하거나 복사하여 프로젝트 폴더에 저장합니다.
-
-패키지 구조에 따라 calculatorLv1 폴더 안에 App.java를 넣어주세요. (예: your_project_root/calculatorLv1/App.java)
-
-컴파일:
-
-터미널 또는 명령 프롬프트를 열고 App.java 파일이 있는 디렉토리로 이동합니다.
-
-다음 명령어를 사용하여 자바 소스 코드를 컴파일합니다:
-
-Bash
-
-javac calculatorLv1/App.java
-실행:
-
-컴파일이 성공하면 다음 명령어로 프로그램을 실행합니다:
-
-Bash
 
 java calculatorLv1.App
 💡 코드 구조
