@@ -1,56 +1,67 @@
-package Lv2calculator;
-
+package Lv3calculator;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-public class App2 {
+public class App3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Calculator ca = new Calculator();
+        Calculator3 ca = new Calculator3();
 
         System.out.println("간단한 계산기 프로그램입니다.");
 
         while (true) {
-            int num1 = 0;
+            int num1 = 0, num2 = 0;
+
+            // 첫 번째 숫자 입력
             while (true) {
-                System.out.print("첫 번째 양의 정수를 입력하세요 (0 포함): ");
+                System.out.print("첫 번째 양의 정수를 입력하세요: ");
                 try {
                     num1 = scanner.nextInt();
-                    if (num1 >= 0) break;
-                    else System.out.println("음수는 입력할 수 없습니다.");
+                    if (num1 <= 0) {
+                        System.out.println("양의 정수를 입력하세요.");
+                        continue;
+                    }
+                    break;
                 } catch (InputMismatchException e) {
                     System.out.println("정수를 입력하세요.");
-                    scanner.next();
+                    scanner.next(); // 잘못된 입력 버리기
                 }
             }
 
+
+            // 연산자 입력
             System.out.print("사칙연산 기호를 입력하세요 (+, -, *, /, %, ^): ");
             char operator = scanner.next().charAt(0);
 
-            int num2 = 0;
+            // 두 번째 숫자 입력
             while (true) {
-                System.out.print("두 번째 양의 정수를 입력하세요 (0 포함): ");
+                System.out.print("두 번째 양의 정수를 입력하세요: ");
                 try {
                     num2 = scanner.nextInt();
-                    if (num2 >= 0) break;
-                    else System.out.println("음수는 입력할 수 없습니다.");
+                    if (num2 <= 0) {
+                        System.out.println("양의 정수를 입력하세요.");
+                        continue;
+                    }
+                    break;
                 } catch (InputMismatchException e) {
                     System.out.println("정수를 입력하세요.");
                     scanner.next();
                 }
             }
 
+
+            // 연산 수행
             try {
-                int result = ca.cal(num1, num2, operator);
-                System.out.println("연산 결과: " + result);
+                OperatorEnum operatorType = OperatorEnum.fromChar(operator);
+                int result = ca.calculate(num1, num2, operatorType);
+                System.out.println("결과: " + result);
             } catch (ArithmeticException | IllegalArgumentException e) {
-                System.out.println("연산 오류: " + e.getMessage());
+                System.out.println("오류: " + e.getMessage());
             }
 
-            System.out.println("---");
-
+            // 현재 저장된 연산 결과들 확인 (Getter 활용)
             // 현재 저장된 연산 결과들 확인 (Getter 활용)
             System.out.println("현재 저장된 연산 결과들: " + ca.getResults());
 
