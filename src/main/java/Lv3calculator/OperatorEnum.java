@@ -28,8 +28,8 @@ public enum OperatorEnum {
         throw new IllegalArgumentException("유효하지 않은 연산 기호입니다: " + ch);
     }
 
-    // 실제 계산 수행 (공통 메서드, switch-case로 분기)
-    public int calculate(int a, int b) {
+    // 실제 계산 수행 로 분기)
+    public double calculate(double a, double b) {
         switch (this) {
             case ADD:
                 return a + b;
