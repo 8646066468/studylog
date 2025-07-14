@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class App3 {
     public static double inputPositiveNumber(Scanner scanner, String message) {
-        double num = 0;
+        double num ;
         while (true) {
             System.out.print(message);
             try {
@@ -30,44 +30,12 @@ public class App3 {
         System.out.println("간단한 계산기 프로그램입니다.");
 
         while (true) {
-            double num1 = 0, num2 = 0;
-
-            // 첫 번째 숫자 입력
-            while (true) {
-                System.out.print("첫 번째 양의 숫자를 입력하세요: ");
-                try {
-                    num1 = scanner.nextDouble();
-                    if (num1 <= 0) {
-                        System.out.println("양의 숫자를 입력하세요.");
-                        continue;
-                    }
-                    break;
-                } catch (InputMismatchException e) {
-                    System.out.println("숫자를 입력하세요.");
-                    scanner.next(); // 잘못된 입력 버리기
-                }
-            }
-
-
+            double num1 = inputPositiveNumber(scanner, "첫 번째 양의 숫자를 입력하세요: ");
             // 연산자 입력
             System.out.print("사칙연산 기호를 입력하세요 (+, -, *, /, %, ^): ");
             char operator = scanner.next().charAt(0);
+            double num2 = inputPositiveNumber(scanner, "두 번째 양의 숫자를 입력하세요: ");
 
-            // 두 번째 숫자 입력
-            while (true) {
-                System.out.print("두 번째 양의 숫자를 입력하세요: ");
-                try {
-                    num2 = scanner.nextDouble();
-                    if (num2 <= 0) {
-                        System.out.println("양의 숫자를 입력하세요.");
-                        continue;
-                    }
-                    break;
-                } catch (InputMismatchException e) {
-                    System.out.println("숫자를 입력하세요.");
-                    scanner.next();
-                }
-            }
 
 
             // 연산 수행
