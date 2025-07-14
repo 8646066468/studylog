@@ -5,6 +5,24 @@ import java.util.List;
 import java.util.Scanner;
 
 public class App3 {
+    public static double inputPositiveNumber(Scanner scanner, String message) {
+        double num = 0;
+        while (true) {
+            System.out.print(message);
+            try {
+                num = scanner.nextDouble();
+                if (num <= 0) {
+                    System.out.println("양의 숫자를 입력하세요.");
+                    continue;
+                }
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("숫자를 입력하세요.");
+                scanner.next();
+            }
+        }
+        return num;
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Calculator3<Double> ca = new Calculator3<>();//실수 전용 계산기
