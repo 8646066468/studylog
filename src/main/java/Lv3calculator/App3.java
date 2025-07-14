@@ -7,25 +7,25 @@ import java.util.Scanner;
 public class App3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Calculator3 ca = new Calculator3();
+        Calculator3<Double> ca = new Calculator3<>();//실수 전용 계산기
 
         System.out.println("간단한 계산기 프로그램입니다.");
 
         while (true) {
-            int num1 = 0, num2 = 0;
+            double num1 = 0, num2 = 0;
 
             // 첫 번째 숫자 입력
             while (true) {
-                System.out.print("첫 번째 양의 정수를 입력하세요: ");
+                System.out.print("첫 번째 양의 숫자를 입력하세요: ");
                 try {
-                    num1 = scanner.nextInt();
+                    num1 = scanner.nextDouble();
                     if (num1 <= 0) {
-                        System.out.println("양의 정수를 입력하세요.");
+                        System.out.println("양의 숫자를 입력하세요.");
                         continue;
                     }
                     break;
                 } catch (InputMismatchException e) {
-                    System.out.println("정수를 입력하세요.");
+                    System.out.println("숫자를 입력하세요.");
                     scanner.next(); // 잘못된 입력 버리기
                 }
             }
@@ -37,16 +37,16 @@ public class App3 {
 
             // 두 번째 숫자 입력
             while (true) {
-                System.out.print("두 번째 양의 정수를 입력하세요: ");
+                System.out.print("두 번째 양의 숫자를 입력하세요: ");
                 try {
-                    num2 = scanner.nextInt();
+                    num2 = scanner.nextDouble();
                     if (num2 <= 0) {
-                        System.out.println("양의 정수를 입력하세요.");
+                        System.out.println("양의 숫자를 입력하세요.");
                         continue;
                     }
                     break;
                 } catch (InputMismatchException e) {
-                    System.out.println("정수를 입력하세요.");
+                    System.out.println("숫자를 입력하세요.");
                     scanner.next();
                 }
             }
@@ -55,7 +55,7 @@ public class App3 {
             // 연산 수행
             try {
                 OperatorEnum operatorType = OperatorEnum.fromChar(operator);
-                int result = ca.calculate(num1, num2, operatorType);
+                double result = ca.calculate(num1, num2, operatorType);
                 System.out.println("결과: " + result);
             } catch (ArithmeticException | IllegalArgumentException e) {
                 System.out.println("오류: " + e.getMessage());
@@ -69,7 +69,7 @@ public class App3 {
             System.out.print("연산 결과 리스트를 초기화(새로 설정)하시겠습니까? (y/n): ");
             String resetChoice = scanner.next();
             if (resetChoice.equalsIgnoreCase("y")) {
-                List<Integer> emptyList = new ArrayList<>();
+                List<Double> emptyList = new ArrayList<>();
                 ca.setResults(emptyList);
                 System.out.println("리스트 초기화 후 저장된 연산 결과들: " + ca.getResults());
 

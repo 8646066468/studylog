@@ -2,7 +2,8 @@ package Lv3calculator;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//제네릭 계산기 클래스
+// 다양한 Number 타입(Double, Integer 등)에 대해 연산을 수행할 수 있도록 제네릭으로 설계
 public class Calculator3<T extends Number> {
     // 계산 결과 저장 리스트
     private List<Double> results = new ArrayList<>();
@@ -19,6 +20,7 @@ public class Calculator3<T extends Number> {
     }
 
     // 계산 수행: OperatorEnum의 calculate() 호출
+    // Number 타입의 값을 double로 변환하여 처리
     public double calculate(T num1, T num2, OperatorEnum operator) {
         double a = num1.doubleValue();
         double b = num2.doubleValue();

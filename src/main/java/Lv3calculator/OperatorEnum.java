@@ -28,7 +28,8 @@ public enum OperatorEnum {
         throw new IllegalArgumentException("유효하지 않은 연산 기호입니다: " + ch);
     }
 
-    // 실제 계산 수행 로 분기)
+    // 실제 계산 수행
+    //모든 연산을 double 타입으로 처리하여 실수 계산도 지원
     public double calculate(double a, double b) {
         switch (this) {
             case ADD:
