@@ -46,12 +46,25 @@ public class App3 {
             } catch (ArithmeticException | IllegalArgumentException e) {
                 System.out.println("오류: " + e.getMessage());
             }
+            // 현재 저장된 연산 결과들 출력
+            System.out.println("현재 저장된 연산 결과들: " + ca.getResults());
 
-            // 현재 저장된 연산 결과들 확인 (Getter 활용)
+            //  기준값보다 큰 결과만 출력
+            System.out.print("기준값을 입력하세요. 이 값보다 큰 결과만 출력됩니다: ");
+            double threshold = scanner.nextDouble();
+            List<Double> greaterResults = ca.getbigresults(threshold);
+
+            if (greaterResults.isEmpty()) {
+                System.out.println("기준값보다 큰 결과가 없습니다.");
+            } else {
+                System.out.println("기준값보다 큰 결과들:");
+                greaterResults.forEach(System.out::println);
+            }
+
             // 현재 저장된 연산 결과들 확인 (Getter 활용)
             System.out.println("현재 저장된 연산 결과들: " + ca.getResults());
 
-            // setter메서드 활용.
+            // setter 메서드 활용
             System.out.print("연산 결과 리스트를 초기화(새로 설정)하시겠습니까? (y/n): ");
             String resetChoice = scanner.next();
             if (resetChoice.equalsIgnoreCase("y")) {

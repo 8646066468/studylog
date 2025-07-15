@@ -31,23 +31,20 @@ public enum OperatorEnum {
     // 실제 계산 수행
     //모든 연산을 double 타입으로 처리하여 실수 계산도 지원
     public double calculate(double a, double b) {
-        switch (this) {
-            case ADD:
-                return a + b;
-            case SUB:
-                return a - b;
-            case MUL:
-                return a * b;
-            case DIV:
+        return switch (this) {
+            case ADD -> a + b;
+            case SUB -> a - b;
+            case MUL -> a * b;
+            case DIV -> {
                 if (b == 0) throw new ArithmeticException("0으로 나눌 수 없습니다.");
-                return a / b;
-            case MOD:
-                return a % b;
-            case POW:
+                yield a / b;
+            }
+            case MOD -> a % b;
+            case POW -> {
                 if (b < 0) throw new IllegalArgumentException("음수 지수는 지원하지 않습니다.");
-                return (int) Math.pow(a, b);
-            default:
-                throw new UnsupportedOperationException("지원하지 않는 연산자입니다.");
-        }
+                yield (int) Math.pow(a, b);
+            }
+
+        };
     }
 }

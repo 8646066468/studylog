@@ -2,6 +2,8 @@ package Lv3calculator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 //제네릭 계산기 클래스
 // 다양한 Number 타입(Double, Integer 등)에 대해 연산을 수행할 수 있도록 제네릭으로 설계
 public class Calculator3<T extends Number> {
@@ -37,5 +39,11 @@ public class Calculator3<T extends Number> {
         } else {
             System.out.println("저장된 연산 결과가 없습니다.");
         }
+    }
+    //r이 value보다 큰가?
+    public List<Double> getbigresults(double value) {
+        return results.stream()
+                .filter( r -> r > value)
+                .toList();
     }
 }
