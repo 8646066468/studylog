@@ -58,6 +58,8 @@ LV3 주요 클래스 및 메서드 설명
 calculate(T num1, T num2, OperatorEnum operator): 연산자 enum을 이용해 계산 수행 후 결과 저장
 
 결과 리스트 관리 메서드 포함
+etResultsGreaterThan(double value) 메서드를 구현
+-Java Stream과 람다식을 활용해 results 리스트에서 입력값보다 큰 결과만 걸러내 리스트로 반환
 
 **Lv3calculator.OperatorEnum** //lv3
 
@@ -68,7 +70,7 @@ calculate(T num1, T num2, OperatorEnum operator): 연산자 enum을 이용해 �
 **Lv3calculator.App3**  //lv3
 
 사용자 입력, 실수 연산, 결과 출력 및 리스트 관리, 예외 처리 담당
-
+콘솔에서 기준값을 입력받아 해당 값보다 큰 연산 결과들을 출력
 
 예외 처리 및 입력 검증 설명
 ------------------------------------------------------------------------------------------------------------------------
